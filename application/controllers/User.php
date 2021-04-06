@@ -23,12 +23,20 @@ class User extends CI_Controller {
         else
         {
             //to save records in database
-            $formarray=array();
+            /*$formarray=array();
             $formarray['name']=$this->input->post('name');
             $formarray['email']=$this->input->post('email');
             $formarray['created_at']=date('Y-m-d');
             $this->usermodel->create($formarray);
+            echo "record added successfully";*/
+
+            $data = [         
+                'name' => $this->input->post('name'),
+                'email' => $this->input->post('email')
+            ];
+            $this->usermodel->create($data);
             echo "record added successfully";
+
           //  $this->session->set_finishdata('success','Record added successfully');
            // redirect(base_url().'index.php/user/index');
 
