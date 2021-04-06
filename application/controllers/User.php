@@ -42,7 +42,6 @@ class User extends CI_Controller {
 
         }
     }
-
     public function edit($userId)
     {
         $this->load->model('usermodel');      
