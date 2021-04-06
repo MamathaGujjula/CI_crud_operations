@@ -7,7 +7,8 @@
         }
         public function getall()
         {
-            return $users=$this->db->get('users')->result_array();  //to select data from users table
+            $query = $this->db->get('users');  //to select data from users table
+            return $query->result();
         }
         public function getUser($userId)
         {

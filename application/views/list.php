@@ -15,7 +15,9 @@
             <div class="row">
                 <div class="col-md-6">
                   <h1>View users</h1>
-                  <a class="btn btn-primary" href="<?php echo base_url().'index.php/user/create';?>">Create user</a>
+                </div>
+                <div class="col-md-6"> 
+                    <a class="btn btn-primary" href="<?php echo base_url().'index.php/user/create';?>">Create user</a>
                 </div>
             </div>
             
@@ -36,16 +38,16 @@
                                     foreach($users as $user)
                                     {   ?>
                                     <tr>  
-                                        <td><?php echo $user['user_id']?> </td>
-                                        <td><?php echo $user['name']?> </td>
-                                        <td><?php echo $user['email']?> </td>
+                                        <td><?php echo $user->user_id?> </td>
+                                        <td><?php echo $user->name?> </td>
+                                        <td><?php echo $user->email?> </td>
 
                                         <td> 
-                                            <a href="<?php echo base_url().'index.php/user/edit/'.$user['user_id'];?>" class="btn btn-primary">
+                                            <a href="<?php echo base_url().'index.php/user/edit/'.$user->user_id;?>" class="btn btn-primary">
                                             Edit</a>
                                         </td>
                                         <td> 
-                                            <a href="<?php echo base_url().'index.php/user/delete/'.$user['user_id'];?>" class="btn btn-danger">
+                                            <a href="<?php echo base_url().'index.php/user/delete/'.$user->user_id;?>" class="btn btn-danger">
                                             Delete</a>
                                         </td>
                                     </tr>

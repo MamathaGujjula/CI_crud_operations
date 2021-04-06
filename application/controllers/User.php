@@ -2,20 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User extends CI_Controller {
-    // public function  __construct()
-    // {
-    //    parent::__construct();
-    //    $this->load->library('form_validation');
-    //    $this->load->helper('form');
-    // }
-
 	public function index()
 	{
         $this->load->model('usermodel');
         $users=$this->usermodel->getall();
-        $data=array();
         $data['users']=$users;
-	    $this->load->view('list');
+	    $this->load->view('list',$data);
 
 	}
     public function create()
@@ -71,9 +63,15 @@ class User extends CI_Controller {
     {
         $this->load->model('usermodel');      
         $users=$this->usermodel->getUser($userId); 
-        if(empty($user))
+        if(empty($users))
         {
             echo "record not found";
         }
+        else{
+         
+            $this->usermodel->deleteUser($userId);
+            echo "deleted successfully";
+        }
+        
     }
 }
