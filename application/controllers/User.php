@@ -70,7 +70,7 @@ class User extends CI_Controller {
         else{
          
             $this->usermodel->deleteUser($userId);
-            echo "deleted successfully";
+            echo "deleted record successfully";
         }
         
     }
